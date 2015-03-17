@@ -1,0 +1,40 @@
+﻿@model Store.Models.ViewProduct
+<tr>
+    <td>
+        @Html.DisplayFor(item => item.Name)
+    </td>
+    <td>
+        @Html.DisplayFor(item => item.Description)
+    </td>
+    <td>
+        @Html.DisplayFor(item => item.Price)
+    </td>
+    <td>
+        @Html.DisplayFor(item => item.Category)
+    </td>
+    <td>
+        @Html.DisplayFor(item => item.UserSeller)
+    </td>
+    <td>
+        @if (User.IsInRole("user"))
+        {
+            @Html.RouteLink("Details", new
+            {
+                controller = "Product",
+                action = "Details",
+                id = Model.ProductId
+            });
+        }
+        |
+        @if (User.IsInRole("user"))
+        {
+        @Html.RouteLink("Add", new
+        {
+            area="user",
+            controller="Cart",
+            action="AddToCart",
+            id = Model.ProductId
+        });
+        }
+    </td>
+</tr>

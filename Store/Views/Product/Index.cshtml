@@ -1,0 +1,73 @@
+﻿@model IEnumerable<Store.Models.ViewProduct>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Products</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoryId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserSeller)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        @Html.Partial("ProductSummary",item)
+    }
+    
+</table>
+<hr/>
+
+
+@{
+    int pNumber = ViewBag.pageNumber-1;
+    int nNumber = ViewBag.pageNumber + 1;
+}
+
+<ul class="pagination">
+    
+    <li @if (pNumber<1) {
+            @: class="disabled"> <a href="#">
+            }
+        else
+        {
+            @:> <a href="?page=@pNumber">
+        }
+            &laquo;</a>
+    </li>
+    @for (int i = 1; (i-1) * ViewBag.pageSize <= ViewBag.pageCount; i++)
+    {
+        <li @if (ViewBag.pageNumber==i)
+            { @: class="active"
+                }><a href="?page=@i">@i</a></li>
+    }
+<li @if ((nNumber-1) * ViewBag.pageSize > ViewBag.pageCount) { 
+        @: class="disabled"> <a href="#">
+            }
+        else
+    {
+        @:> <a href="?page=@nNumber">
+            }
+            &raquo;
+        </a>
+</li>
+
+</ul>

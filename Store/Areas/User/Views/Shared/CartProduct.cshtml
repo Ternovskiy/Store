@@ -1,0 +1,44 @@
+﻿@model Store.Areas.User.Models.ViewCart
+
+<tr>
+
+    <td>
+        @Html.DisplayFor(item => item.NameProduct)
+    </td>
+    <td>
+        @Html.DisplayFor(item => item.NameCategory)
+    </td>
+    <td>
+        @Html.DisplayFor(item => item.SellerName)
+    </td>
+    <td>
+        @Html.DisplayFor(item => item.Count)
+    </td>
+    <td>
+        @Html.DisplayFor(item => item.Price)
+    </td>
+    <td>
+        @Html.DisplayFor(item => item.PriceAll)
+    </td>
+    <td>
+        
+        @Html.RouteLink(" + ", new
+        {
+            controller = "Cart",
+            action = "UpCount",
+            id = Model.Id
+        }) |
+        @Html.RouteLink(" - ", new
+        {
+            controller = "Cart",
+            action = "DownCount",
+            id = Model.Id
+        })  |
+        @Html.RouteLink("Delete", new
+        {
+            controller = "Cart",
+            action = "DeleteCart",
+            id = Model.Id
+        }) 
+    </td>
+</tr>

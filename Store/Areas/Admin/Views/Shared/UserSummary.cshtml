@@ -1,0 +1,26 @@
+﻿@model Store.Areas.Admin.Models.ViewUser
+
+@using (Html.BeginForm("Edit", "User", FormMethod.Post))
+{<tr>
+        <td>
+            @Html.DisplayFor(modelItem => modelItem.UserName)
+        </td>
+        <td>
+            @Html.HiddenFor(modelItem => modelItem.Id)
+            @Html.EditorFor(modelItem => modelItem.Admin)
+            @Html.ValidationMessageFor(modelItem => modelItem.Admin)
+        </td>
+        <td>
+            @Html.EditorFor(modelItem => modelItem.Seller)
+            @Html.ValidationMessageFor(modelItem => modelItem.Seller)
+        </td>
+        <td>
+            @Html.EditorFor(modelItem => modelItem.User)
+            @Html.ValidationMessageFor(modelItem => modelItem.User)
+        </td>
+        <td>
+            <input type="submit" value="Save" class="btn btn-default" />
+        </td>
+
+    </tr>
+}

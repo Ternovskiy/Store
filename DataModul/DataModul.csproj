@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1B8B2FBB-B67F-4427-A496-B1214C222384}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataModul</RootNamespace>
+    <AssemblyName>DataModul</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NLog, Version=3.2.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NLog.3.2.0.0\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseRepository\BaseContext.cs" />
+    <Compile Include="BaseRepository\IBaseContext.cs" />
+    <Compile Include="DomainModel\Account.cs" />
+    <Compile Include="DomainModel\State.cs" />
+    <Compile Include="ViewModel\UserRole.cs" />
+    <Compile Include="IQuery\IAccountQuery.cs" />
+    <Compile Include="IQuery\IAdresQuery.cs" />
+    <Compile Include="IQuery\ICartQuery.cs" />
+    <Compile Include="IQuery\ICategoryQuery.cs" />
+    <Compile Include="IQuery\IConnectQuery.cs" />
+    <Compile Include="IQuery\IImageQuery.cs" />
+    <Compile Include="IQuery\IOrderQuery.cs" />
+    <Compile Include="IQuery\IStateQuery.cs" />
+    <Compile Include="IQuery\IUserQuery.cs" />
+    <Compile Include="IRepository\IRepositoryAccount.cs" />
+    <Compile Include="IRepository\IRepositoryAdres.cs" />
+    <Compile Include="IRepository\IRepositoryCart.cs" />
+    <Compile Include="IRepository\IRepositoryCategory.cs" />
+    <Compile Include="IRepository\IRepositoryImage.cs" />
+    <Compile Include="IRepository\IRepositoryOrder.cs" />
+    <Compile Include="IRepository\IRepositoryProduct.cs" />
+    <Compile Include="IRepository\IRepositoryState.cs" />
+    <Compile Include="IRepository\IRepositoryUser.cs" />
+    <Compile Include="Query\AccountBaseQuery.cs" />
+    <Compile Include="Query\AccountQuery.cs" />
+    <Compile Include="Query\AdresBaseQuery.cs" />
+    <Compile Include="Query\AdresQuery.cs" />
+    <Compile Include="Query\CartBaseQuery.cs" />
+    <Compile Include="Query\CartQuery.cs" />
+    <Compile Include="Query\CategoryBaseQuery.cs" />
+    <Compile Include="Query\CategoryQuery.cs" />
+    <Compile Include="Query\ConnectQuery.cs" />
+    <Compile Include="Query\ImageBaseQuery.cs" />
+    <Compile Include="Query\ImageQuery.cs" />
+    <Compile Include="Query\OrderBaseQuery.cs" />
+    <Compile Include="Query\OrderQuery.cs" />
+    <Compile Include="Query\ProductBaseQuery.cs" />
+    <Compile Include="Query\StateBaseQuery.cs" />
+    <Compile Include="Query\StateQuery.cs" />
+    <Compile Include="Query\UserBaseQuery.cs" />
+    <Compile Include="Query\UserQuery.cs" />
+    <Compile Include="Repository\Repository.cs" />
+    <Compile Include="DomainModel\Adres.cs" />
+    <Compile Include="DomainModel\Cart.cs" />
+    <Compile Include="DomainModel\Category.cs" />
+    <Compile Include="DomainModel\Image.cs" />
+    <Compile Include="DomainModel\Order.cs" />
+    <Compile Include="DomainModel\Product.cs" />
+    <Compile Include="IQuery\IBaseQuery.cs" />
+    <Compile Include="IQuery\IProductQuery.cs" />
+    <Compile Include="Query\ProductQuery.cs" />
+    <Compile Include="Repository\RepositoryAccount.cs" />
+    <Compile Include="Repository\RepositoryAdres.cs" />
+    <Compile Include="Repository\RepositoryCart.cs" />
+    <Compile Include="Repository\RepositoryCategory.cs" />
+    <Compile Include="Repository\RepositoryImage.cs" />
+    <Compile Include="Repository\RepositoryOrder.cs" />
+    <Compile Include="Repository\RepositoryProduct.cs" />
+    <Compile Include="Repository\RepositoryState.cs" />
+    <Compile Include="Repository\RepositoryUser.cs" />
+    <Compile Include="Static\IENumerableExtensions.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="DomainModel\User.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="IRepository\IRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

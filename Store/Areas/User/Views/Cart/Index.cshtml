@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Store.Areas.User.Models.ViewCart>
+
+<h3>Cart</h3>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NameProduct)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NameCategory)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SellerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Count)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PriceAll)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        @Html.Partial("CartProduct",item)
+    }
+
+</table>
+
+<hr/>
+<h4>Price all list @ViewBag.PriceSumm</h4>
+@Html.ActionLink("To order", "Index", new { controller = "Order" }, htmlAttributes: new { @class = "btn btn-primary btn-large" })
