@@ -12,12 +12,12 @@ namespace Store.Controllers
 {
     public class HomeController : Controller
     {
-        public HomeController(IRepository<Category> repository)
+        public HomeController(IRepositoryCategory repository)
         {
             Repository = repository;
         }
 
-        IRepository<Category> Repository { get; set; } 
+        IRepositoryCategory Repository { get; set; } 
         public ActionResult Index()
         {
             return View();

@@ -15,9 +15,9 @@ namespace Store.Controllers
     public class ProductController : Controller
     {
         public ProductController(
-            IRepository<Product> repository,
-            IRepository<Category> repositoryCategory,
-            IRepository<User> repositoryUser,
+            IRepositoryProduct repository,
+            IRepositoryCategory repositoryCategory,
+            IRepositoryUser repositoryUser,
             IMapper mapper
             )
         {
@@ -27,9 +27,9 @@ namespace Store.Controllers
             Mapper = mapper;
         }
 
-        IRepository<Product> Repository { get; set; }
-        IRepository<Category> RepositoryCategory { get; set; }
-        IRepository<User> RepositoryUser { get; set; }
+        IRepositoryProduct Repository { get; set; }
+        IRepositoryCategory RepositoryCategory { get; set; }
+        IRepositoryUser RepositoryUser { get; set; }
         IMapper Mapper { get; set; }
         // GET: Seller/Product
         public ActionResult Index(int? page)
